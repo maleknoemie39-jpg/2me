@@ -179,9 +179,9 @@ if ($message === 'added') {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2me, la boutique en ligne de vêtements et accessoires de seconde main soigneusement sélectionnés.">
+  <meta name="description" content="Découvrez chez 2me des vêtements et accessoires de seconde main sélectionnés avec soin, à prix doux.">
   <meta name="theme-color" content="#edf3f7">
-  <title>2me — La mode a déjà une histoire</title>
+  <title>2me — Le style a plusieurs vies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -204,32 +204,32 @@ if ($message === 'added') {
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> BIEN PORTÉ, PRÊT À REVIVRE</p>
-        <h1>La mode a<br>déjà une <em>histoire.</em></h1>
-        <p class="hero-description">Des pièces uniques, choisies avec soin. À vous de leur inventer la suite.</p>
-        <a class="button button-dark" href="#boutique">Découvrir la sélection <span aria-hidden="true">↗</span></a>
-        <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span> Chaque pièce est unique, comme vous.</div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> SECONDE MAIN, PREMIER CHOIX</p>
+        <h1>Le style a<br>plusieurs <em>vies.</em></h1>
+        <p class="hero-description">Des vêtements et accessoires choisis avec soin pour leur qualité, leur allure et leur prix doux.</p>
+        <a class="button button-dark" href="#boutique">Explorer la collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span> La bonne pièce, au bon moment.</div>
       </div>
       <div class="hero-visual">
         <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85" alt="Deux amies choisissent des vêtements dans une boutique">
         <div class="floating-note"><span>100 %</span><br>seconde main</div>
-        <div class="hero-caption">DES TROUVAILLES QUI ONT DU SENS <span>01 — 04</span></div>
+        <div class="hero-caption">LE GOÛT DES BELLES TROUVAILLES <span>PIÈCES UNIQUES</span></div>
       </div>
     </section>
 
     <section class="values-strip" aria-label="Nos engagements">
-      <p><span aria-hidden="true">✳</span> Sélection vérifiée</p>
-      <p><span aria-hidden="true">↻</span> Une mode qui circule</p>
-      <p><span aria-hidden="true">♡</span> Des prix tout doux</p>
+      <p><span aria-hidden="true">✳</span> Des pièces vérifiées</p>
+      <p><span aria-hidden="true">↻</span> Une mode plus responsable</p>
+      <p><span aria-hidden="true">♡</span> Des prix qui font plaisir</p>
     </section>
 
     <section class="shop-section" id="boutique">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">LE DRESSING 2me</p>
-          <h2>De belles pièces,<br><em>une deuxième vie.</em></h2>
+          <p class="eyebrow">LA COLLECTION 2me</p>
+          <h2>Votre prochain<br>coup de cœur est <em>ici.</em></h2>
         </div>
-        <p class="section-intro">On chine, on vérifie, on vous déniche des vêtements et accessoires qui méritent de continuer leur histoire.</p>
+        <p class="section-intro">Des vêtements et accessoires de seconde main, sélectionnés pour leur qualité, leur style et leur potentiel de seconde vie.</p>
       </div>
 
       <div class="shop-tools">
