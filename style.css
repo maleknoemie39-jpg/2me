@@ -1,5 +1,13 @@
 :root {
   color-scheme: light;
+  --ink: #253347;
+  --muted: #758194;
+  --blue: #355777;
+  --blue-light: #e8f0f7;
+  --cream: #70baf6;
+  --paper: #fff;
+  --line: #e1e8ef;
+  --serif: "Playfair Display", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
 }
 
