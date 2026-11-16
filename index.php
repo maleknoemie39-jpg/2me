@@ -148,7 +148,7 @@ if (isset($databaseUnavailable)) {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Base de données indisponible — 2me</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
     </head>
     <body data-open-cart="<?= (isset($_GET['open_cart']) || ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorMessage !== '')) ? '1' : '0' ?>">
       <main class="shop-section">
@@ -185,13 +185,15 @@ if ($message === 'added') {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
   <script src="script.js?v=<?= filemtime(__DIR__ . '/script.js') ?>" defer></script>
 </head>
 <body>
   <div class="announcement">La seconde main, le bon choix. Livraison offerte dès 60 €.</div>
   <header class="site-header">
-    <a class="wordmark" href="index.php" aria-label="2me, accueil">2me</a>
+    <a class="wordmark" href="index.php">
+      <img class="site-logo" src="logo.png" alt="2me Boutique, vêtements de seconde main">
+    </a>
     <nav class="main-nav" aria-label="Navigation principale">
       <a href="#boutique">La boutique</a>
       <a href="#histoire">Notre histoire</a>
@@ -211,8 +213,7 @@ if ($message === 'added') {
         <div class="hero-note">La bonne pièce, au bon moment.</div>
       </div>
       <div class="hero-visual">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85" alt="Deux amies choisissent des vêtements dans une boutique">
-        <div class="floating-note"><span>100 %</span><br>seconde main</div>
+        <img src="logo.png" alt="Deux amies choisissent des vêtements dans une boutique">
         <div class="hero-caption">LE GOÛT DES BELLES TROUVAILLES <span>PIÈCES UNIQUES</span></div>
       </div>
     </section>
@@ -283,7 +284,7 @@ if ($message === 'added') {
 
     <section class="story-section" id="histoire">
       <div class="story-image">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Sélection de vêtements de seconde main aux couleurs douces" loading="lazy">
+        <img src="logo.png" alt="Sélection de vêtements de seconde main aux couleurs douces" loading="lazy">
       </div>
       <div class="story-copy">
         <p class="eyebrow">MOINS MAIS MIEUX</p>
@@ -295,7 +296,9 @@ if ($message === 'added') {
   </main>
 
   <footer class="site-footer">
-    <a class="wordmark" href="index.php" aria-label="2me, accueil">2me</a>
+    <a class="wordmark" href="index.php" aria-label="2me, accueil">
+      <img class="site-logo" src="logo.png" alt="">
+    </a>
     <p>De belles histoires à porter.</p>
   </footer>
 

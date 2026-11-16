@@ -26,8 +26,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 
 .announcement { min-height: 34px; padding: 9px 16px; background: var(--blue-dark); color: white; text-align: center; font-size: 10px; letter-spacing: .09em; }
 .site-header { position: sticky; top: 0; z-index: 5; min-height: 76px; padding: 0 7.2%; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); background: #fffffff2; backdrop-filter: blur(14px); }
-.wordmark { font-family: var(--serif); font-weight: 700; font-size: 27px; letter-spacing: -.08em; }
-.wordmark span { color: var(--accent); }
+.wordmark { width: 110px; height: 72px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; }
+.site-logo { width: 100%; height: 100%; object-fit: contain; }
 .main-nav { display: flex; gap: 38px; color: #566579; font-size: 13px; }
 .main-nav a:hover, .text-link:hover { color: var(--accent); }
 .cart-button { min-height: 40px; border: 0; background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; }
@@ -103,7 +103,7 @@ h1 em, h2 em { color: var(--accent); font-weight: 500; }
 .story-copy > p:not(.eyebrow) { max-width: 420px; margin: 21px 0 25px; color: #626f7f; font-size: 13px; line-height: 1.9; }
 .text-link { padding: 0; border: 0; background: transparent; cursor: pointer; font-size: 11px; font-weight: 600; }
 .site-footer { min-height: 112px; padding: 25px 7.2%; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--blue-dark); color: var(--paper); }
-.site-footer .wordmark { color: var(--paper); }
+.site-footer .wordmark { padding: 3px 6px; border-radius: 3px; background: var(--paper); }
 .site-footer p, .site-footer > span { color: #dce5ec; font-size: 10px; }
 
 .cart-dialog { width: min(470px, 100%); height: 100%; max-height: 100%; margin: 0 0 0 auto; padding: 30px; overflow-y: auto; border: 0; background: var(--paper); color: var(--ink); box-shadow: -10px 0 45px #0002; }
@@ -151,7 +151,7 @@ h1 em, h2 em { color: var(--accent); font-weight: 500; }
 @media (max-width: 620px) {
   .announcement { font-size: 9px; }
   .site-header { min-height: 68px; padding: 0 5%; }
-  .wordmark { font-size: 22px; }
+  .wordmark { width: 92px; height: 60px; }
   .main-nav { gap: 15px; font-size: 10px; }
   .main-nav a:last-child { display: none; }
   .cart-button { font-size: 10px; }
