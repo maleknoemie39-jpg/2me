@@ -1,19 +1,28 @@
 # RE:PORTÉ
 
-Une petite boutique fictive de vêtements et accessoires de seconde main, réalisée en HTML, CSS et JavaScript.
+Une boutique fictive de vêtements et accessoires de seconde main, réalisée en PHP, MySQL, CSS et JavaScript.
 
-## Lancer le site
+## Lancer le site avec XAMPP
 
-Ouvrez `index.html` dans un navigateur. Aucun outil ni installation n’est nécessaire. Les photos sont chargées depuis Unsplash et nécessitent une connexion Internet.
+1. Démarrez Apache et MySQL depuis le panneau de contrôle XAMPP.
+2. Ouvrez `http://localhost/phpmyadmin`, puis importez le fichier `database.sql`. Il crée la base `reporte`, ses tables et les produits de démonstration.
+3. Placez le dossier du projet dans `C:\xampp1\htdocs\2me` (ou dans le dossier `htdocs` de votre installation).
+4. Visitez `http://localhost/2me/`.
+
+La configuration MySQL par défaut utilise `127.0.0.1`, l’utilisateur `root` et un mot de passe vide, comme dans une installation XAMPP standard. Vous pouvez la remplacer avec les variables d’environnement `DB_HOST`, `DB_NAME`, `DB_USER` et `DB_PASSWORD`. PHP doit avoir l’extension PDO MySQL activée.
 
 ## Fonctionnalités
 
-- Catalogue de vêtements, chaussures et accessoires
+- Catalogue de vêtements, chaussures et accessoires chargé depuis MySQL
 - Filtres par catégorie et recherche
-- Panier avec ajout, retrait et total
-- Panier mémorisé dans le navigateur
+- Panier de session avec ajout, retrait et calcul du total
+- Commandes et articles associés enregistrés en base de données
+- Pièces uniques marquées comme vendues après commande
+- Protection CSRF des formulaires
 - Commande de démonstration (aucun paiement réel)
 - Mise en page adaptée aux téléphones et ordinateurs
+
+Les commandes de démonstration enregistrent le nom et l’adresse e-mail saisis, mais ne déclenchent aucun paiement.
 
 ## Publier sur GitHub
 
