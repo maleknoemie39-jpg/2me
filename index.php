@@ -213,7 +213,7 @@ if ($message === 'added') {
         <div class="hero-note">La bonne pièce, au bon moment.</div>
       </div>
       <div class="hero-visual">
-        <img src="logo.png" alt="Deux amies choisissent des vêtements dans une boutique">
+        <img src="logo.png" alt="Logo 2me Boutique de vêtements de seconde main">
         <div class="hero-caption">LE GOÛT DES BELLES TROUVAILLES <span>PIÈCES UNIQUES</span></div>
       </div>
     </section>
