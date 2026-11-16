@@ -46,7 +46,6 @@ h1 em, h2 em { color: var(--accent); font-weight: 500; }
 .button-dark { background: var(--blue); color: white; }
 .button-dark:hover { background: var(--blue-dark); }
 .hero-note { margin-top: 37px; color: #777a6e; font-size: 11px; }
-.note-icon { margin-right: 8px; color: var(--accent); font-size: 16px; vertical-align: -1px; }
 .hero-visual { position: relative; max-width: 600px; justify-self: end; width: 100%; }
 .hero-visual > img { height: 440px; object-fit: cover; object-position: center 45%; }
 .floating-note { position: absolute; top: 28px; left: -30px; padding: 15px 20px; background: var(--paper); color: #6b7062; font-size: 10px; line-height: 1.5; box-shadow: 0 5px 25px #252b2114; }
@@ -55,7 +54,6 @@ h1 em, h2 em { color: var(--accent); font-weight: 500; }
 
 .values-strip { min-height: 74px; padding: 15px 12%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .values-strip p { color: #657488; font-size: 12px; }
-.values-strip span { margin-right: 8px; color: var(--accent); font-size: 17px; vertical-align: -2px; }
 .inspiration-section { padding: 82px 7.2% 88px; }
 .inspiration-heading { margin-bottom: 34px; display: flex; align-items: end; justify-content: space-between; gap: 24px; }
 .inspiration-heading h2 { font-size: clamp(36px, 4vw, 48px); line-height: 1.12; }
@@ -104,7 +102,6 @@ h1 em, h2 em { color: var(--accent); font-weight: 500; }
 .story-image img { height: 370px; object-fit: cover; }
 .story-copy > p:not(.eyebrow) { max-width: 420px; margin: 21px 0 25px; color: #626f7f; font-size: 13px; line-height: 1.9; }
 .text-link { padding: 0; border: 0; background: transparent; cursor: pointer; font-size: 11px; font-weight: 600; }
-.text-link span { margin-left: 8px; }
 .site-footer { min-height: 112px; padding: 25px 7.2%; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--blue-dark); color: var(--paper); }
 .site-footer .wordmark { color: var(--paper); }
 .site-footer p, .site-footer > span { color: #dce5ec; font-size: 10px; }
@@ -166,7 +163,6 @@ h1 em, h2 em { color: var(--accent); font-weight: 500; }
   .hero-note { margin-top: 24px; }
   .values-strip { padding: 12px 4%; gap: 8px; }
   .values-strip p { font-size: 9px; }
-  .values-strip span { margin-right: 3px; font-size: 13px; }
   .inspiration-section { padding: 60px 6%; }
   .inspiration-heading { align-items: start; flex-direction: column; gap: 14px; }
   .inspiration-heading h2 { font-size: 38px; }

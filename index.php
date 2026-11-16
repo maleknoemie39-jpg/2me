@@ -204,11 +204,11 @@ if ($message === 'added') {
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> SECONDE MAIN, PREMIER CHOIX</p>
+        <p class="eyebrow">SECONDE MAIN, PREMIER CHOIX</p>
         <h1>Le style a<br>plusieurs <em>vies.</em></h1>
         <p class="hero-description">Des vêtements et accessoires choisis avec soin pour leur qualité, leur allure et leur prix doux.</p>
-        <a class="button button-dark" href="#boutique">Explorer la collection <span aria-hidden="true">↗</span></a>
-        <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span> La bonne pièce, au bon moment.</div>
+        <a class="button button-dark" href="#boutique">Explorer la collection</a>
+        <div class="hero-note">La bonne pièce, au bon moment.</div>
       </div>
       <div class="hero-visual">
         <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85" alt="Deux amies choisissent des vêtements dans une boutique">
@@ -218,9 +218,9 @@ if ($message === 'added') {
     </section>
 
     <section class="values-strip" aria-label="Nos engagements">
-      <p><span aria-hidden="true">✳</span> Des pièces vérifiées</p>
-      <p><span aria-hidden="true">↻</span> Une mode plus responsable</p>
-      <p><span aria-hidden="true">♡</span> Des prix qui font plaisir</p>
+      <p>Des pièces vérifiées</p>
+      <p>Une mode plus responsable</p>
+      <p>Des prix qui font plaisir</p>
     </section>
 
     <section class="shop-section" id="boutique">
@@ -241,7 +241,6 @@ if ($message === 'added') {
         </div>
         <label class="search-box">
           <span class="visually-hidden">Rechercher un article</span>
-          <span aria-hidden="true">⌕</span>
           <input id="product-search" type="search" placeholder="Une petite recherche…">
         </label>
         <label class="sort-box" for="product-sort">
@@ -290,7 +289,7 @@ if ($message === 'added') {
         <p class="eyebrow">MOINS MAIS MIEUX</p>
         <h2>Le style n’a pas<br>besoin d’être <em>neuf.</em></h2>
         <p>Choisir la seconde main, c’est donner une nouvelle chance aux belles choses. Chez 2me, chaque pièce est inspectée et décrite avec honnêteté avant de rejoindre votre dressing.</p>
-        <a class="text-link" href="#boutique">Trouver ma prochaine pièce <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="#boutique">Trouver ma prochaine pièce</a>
       </div>
     </section>
   </main>
@@ -328,9 +327,8 @@ if ($message === 'added') {
     </div>
     <?php if ($cartCount === 0): ?>
       <div class="cart-empty">
-        <span aria-hidden="true">♡</span>
         <p>Votre panier attend sa première trouvaille.</p>
-        <button class="text-link" id="continue-shopping" type="button">Continuer mes découvertes →</button>
+        <button class="text-link" id="continue-shopping" type="button">Continuer mes découvertes</button>
       </div>
     <?php else: ?>
       <div class="cart-footer">
