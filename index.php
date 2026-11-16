@@ -298,7 +298,6 @@ if ($message === 'added') {
   <footer class="site-footer">
     <a class="wordmark" href="index.php" aria-label="2me, accueil">2me</a>
     <p>De belles histoires à porter.</p>
-    <span>© 2026 2me — Projet étudiant</span>
   </footer>
 
   <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
