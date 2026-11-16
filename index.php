@@ -180,13 +180,13 @@ if ($message === 'added') {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="2me, la boutique en ligne de vêtements et accessoires de seconde main soigneusement sélectionnés.">
-  <meta name="theme-color" content="#f6f3eb">
+  <meta name="theme-color" content="#edf3f7">
   <title>2me — La mode a déjà une histoire</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="script.js?v=<?= filemtime(__DIR__ . '/script.js') ?>" defer></script>
 </head>
 <body>
   <div class="announcement">La seconde main, le bon choix. Livraison offerte dès 60 €.</div>
@@ -244,11 +244,20 @@ if ($message === 'added') {
           <span aria-hidden="true">⌕</span>
           <input id="product-search" type="search" placeholder="Une petite recherche…">
         </label>
+        <label class="sort-box" for="product-sort">
+          Trier par
+          <select id="product-sort">
+            <option value="featured">Sélection 2me</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="name-asc">Nom A–Z</option>
+          </select>
+        </label>
       </div>
       <p class="results-count" id="results-count" aria-live="polite"></p>
       <div class="product-grid" id="product-grid">
         <?php foreach ($products as $product): ?>
-          <article class="product-card" data-category="<?= escape($product['category']) ?>" data-search="<?= escape($product['name'] . ' ' . $product['category'] . ' ' . $product['details']) ?>">
+          <article class="product-card" data-category="<?= escape($product['category']) ?>" data-search="<?= escape($product['name'] . ' ' . $product['category'] . ' ' . $product['details']) ?>" data-name="<?= escape($product['name']) ?>" data-price="<?= escape((string) $product['price']) ?>">
             <div class="product-image-wrap">
               <img class="product-image" src="<?= escape($product['image_url']) ?>" alt="<?= escape($product['image_alt']) ?>" loading="lazy">
               <span class="product-tag"><?= escape($product['tag']) ?></span>

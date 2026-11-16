@@ -1,8 +1,12 @@
 const productGrid = document.querySelector("#product-grid");
 const searchInput = document.querySelector("#product-search");
+const sortSelect = document.querySelector("#product-sort");
 const resultsCount = document.querySelector("#results-count");
 const emptyState = document.querySelector("#empty-state");
 const cartDialog = document.querySelector("#cart-dialog");
+const originalProductOrder = new Map(
+  [...productGrid.querySelectorAll(".product-card")].map((product, index) => [product, index])
+);
 
 function filterProducts() {
   const activeFilter = document.querySelector(".filter-button.active")?.dataset.filter || "tout";
@@ -21,6 +25,27 @@ function filterProducts() {
   emptyState.hidden = visibleCount > 0;
 }
 
+function sortProducts() {
+  const sortBy = sortSelect.value;
+  const products = [...productGrid.querySelectorAll(".product-card")];
+
+  products.sort((left, right) => {
+    if (sortBy === "price-asc" || sortBy === "price-desc") {
+      const priceDifference = Number(left.dataset.price) - Number(right.dataset.price);
+      if (priceDifference !== 0) return sortBy === "price-asc" ? priceDifference : -priceDifference;
+    }
+
+    if (sortBy === "name-asc") {
+      const nameDifference = left.dataset.name.localeCompare(right.dataset.name, "fr");
+      if (nameDifference !== 0) return nameDifference;
+    }
+
+    return originalProductOrder.get(left) - originalProductOrder.get(right);
+  });
+
+  products.forEach((product) => productGrid.append(product));
+}
+
 document.querySelectorAll(".filter-button").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".filter-button").forEach((filterButton) => {
@@ -33,6 +58,7 @@ document.querySelectorAll(".filter-button").forEach((button) => {
 });
 
 searchInput.addEventListener("input", filterProducts);
+sortSelect.addEventListener("change", sortProducts);
 document.querySelector("#open-cart").addEventListener("click", () => cartDialog.showModal());
 document.querySelector("#close-cart").addEventListener("click", () => cartDialog.close());
 document.querySelector("#continue-shopping")?.addEventListener("click", () => cartDialog.close());
