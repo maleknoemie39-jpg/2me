@@ -38,3 +38,4 @@ git push -u origin main
 ```
 
 Remplacez l’adresse `origin` par celle de votre dépôt GitHub. Si Git vous demande de vous identifier, suivez la procédure proposée par GitHub.
+

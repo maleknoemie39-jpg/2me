@@ -47,3 +47,4 @@ VALUES
   ('jean-droit', 'Jean droit', 'Vêtements', 'Taille 38 · Très bon état', 22.00, 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80', 'Jean bleu', 'Indispensable', 7),
   ('sandales', 'Sandales en cuir', 'Chaussures', 'Pointure 39 · Bon état', 29.00, 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80', 'Sandales à talon', 'Belle trouvaille', 8)
 ON DUPLICATE KEY UPDATE id = VALUES(id);
+

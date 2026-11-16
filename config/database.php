@@ -21,3 +21,4 @@ function getDatabaseConnection(): PDO
 
     return $pdo;
 }
+
