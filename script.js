@@ -4,9 +4,37 @@ const sortSelect = document.querySelector("#product-sort");
 const resultsCount = document.querySelector("#results-count");
 const emptyState = document.querySelector("#empty-state");
 const cartDialog = document.querySelector("#cart-dialog");
+const heroCarousel = document.querySelector("#hero-carousel");
 const originalProductOrder = new Map(
   [...productGrid.querySelectorAll(".product-card")].map((product, index) => [product, index])
 );
+
+if (heroCarousel) {
+  const slides = [...heroCarousel.querySelectorAll(".hero-slide")];
+  const dots = [...heroCarousel.querySelectorAll(".carousel-dot")];
+  let activeSlide = 0;
+
+  function showHeroSlide(index) {
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeSlide;
+      slide.hidden = !isActive;
+      slide.classList.toggle("active", isActive);
+      dots[slideIndex].classList.toggle("active", isActive);
+      dots[slideIndex].setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  heroCarousel.querySelector("[data-carousel-previous]")?.addEventListener("click", () => {
+    showHeroSlide(activeSlide - 1);
+  });
+  heroCarousel.querySelector("[data-carousel-next]")?.addEventListener("click", () => {
+    showHeroSlide(activeSlide + 1);
+  });
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => showHeroSlide(index));
+  });
+}
 
 function filterProducts() {
   const activeFilter = document.querySelector(".filter-button.active")?.dataset.filter || "tout";

@@ -163,6 +163,10 @@ if (isset($databaseUnavailable)) {
 }
 
 $cartCount = count($cartProducts);
+$heroProducts = array_values(array_filter(
+    $products,
+    static fn (array $product): bool => mb_strtolower($product['tag'], 'UTF-8') === 'coup de cœur'
+));
 $cartTotalCents = 0;
 foreach ($cartProducts as $product) {
     $cartTotalCents += (int) round((float) $product['price'] * 100);
@@ -182,6 +186,7 @@ if ($message === 'added') {
   <meta name="description" content="Découvrez chez 2me des vêtements et accessoires de seconde main sélectionnés avec soin, à prix doux.">
   <meta name="theme-color" content="#edf3f7">
   <title>2me — Le style a plusieurs vies</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -189,7 +194,7 @@ if ($message === 'added') {
   <script src="script.js?v=<?= filemtime(__DIR__ . '/script.js') ?>" defer></script>
 </head>
 <body>
-  <div class="announcement">La seconde main, le bon choix. Livraison offerte dès 60 €.</div>
+  <div class="announcement">La seconde main, le bon choix.</div>
   <header class="site-header">
     <a class="wordmark" href="index.php">
       <img class="site-logo" src="logo.png" alt="2me Boutique, vêtements de seconde main">
@@ -213,8 +218,37 @@ if ($message === 'added') {
         <div class="hero-note">La bonne pièce, au bon moment.</div>
       </div>
       <div class="hero-visual">
-        <img src="logo.png" alt="Logo 2me Boutique de vêtements de seconde main">
-        <div class="hero-caption">LE GOÛT DES BELLES TROUVAILLES <span>PIÈCES UNIQUES</span></div>
+        <?php if ($heroProducts !== []): ?>
+          <div class="hero-carousel" id="hero-carousel" role="region" aria-roledescription="carrousel" aria-label="Les coups de cœur de la marque">
+            <div class="hero-carousel-track" aria-live="polite">
+              <?php foreach ($heroProducts as $index => $product): ?>
+                <article class="hero-slide<?= $index === 0 ? ' active' : '' ?>" aria-roledescription="diapositive" aria-label="<?= ($index + 1) . ' sur ' . count($heroProducts) . ' : ' . escape($product['name']) ?>"<?= $index === 0 ? '' : ' hidden' ?>>
+                  <img src="<?= escape($product['image_url']) ?>" alt="<?= escape($product['image_alt']) ?>">
+                  <span class="hero-favorite-label" aria-hidden="true">COUP DE CŒUR 2me</span>
+                  <img class="hero-carousel-logo" src="logo.png" alt="">
+                  <div class="hero-caption">
+                    <span><?= escape($product['category']) ?> · <?= escape($product['name']) ?></span>
+                    <span><?= number_format((float) $product['price'], 0, ',', ' ') ?> €</span>
+                  </div>
+                </article>
+              <?php endforeach; ?>
+            </div>
+            <?php if (count($heroProducts) > 1): ?>
+              <div class="hero-carousel-controls">
+                <button class="carousel-arrow" type="button" data-carousel-previous aria-label="Pièce précédente">←</button>
+                <div class="carousel-dots" role="group" aria-label="Choisir une pièce">
+                  <?php foreach ($heroProducts as $index => $product): ?>
+                    <button class="carousel-dot<?= $index === 0 ? ' active' : '' ?>" type="button" data-carousel-slide="<?= $index ?>" aria-label="Afficher <?= escape($product['name']) ?>" aria-pressed="<?= $index === 0 ? 'true' : 'false' ?>"></button>
+                  <?php endforeach; ?>
+                </div>
+                <button class="carousel-arrow" type="button" data-carousel-next aria-label="Pièce suivante">→</button>
+              </div>
+            <?php endif; ?>
+          </div>
+        <?php else: ?>
+          <img src="logo.png" alt="Logo 2me Boutique de vêtements de seconde main">
+          <div class="hero-caption">LE GOÛT DES BELLES TROUVAILLES <span>PIÈCES UNIQUES</span></div>
+        <?php endif; ?>
       </div>
     </section>
 
@@ -222,6 +256,30 @@ if ($message === 'added') {
       <p>Des pièces vérifiées</p>
       <p>Une mode plus responsable</p>
       <p>Des prix qui font plaisir</p>
+    </section>
+
+    <section class="benefits-section" aria-label="Pourquoi choisir 2me">
+      <div class="benefits-heading">
+        <p class="eyebrow">POURQUOI 2me</p>
+        <h2>Le bon style, sans la <em>surconsommation.</em></h2>
+      </div>
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">✓</span>
+          <h3>Pièces vérifiées</h3>
+          <p>Chaque article est sélectionné avec soin pour son état, sa qualité et son potentiel de style.</p>
+        </article>
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">◎</span>
+          <h3>Style durable</h3>
+          <p>On donne une seconde vie aux belles matières et aux silhouettes qui méritent d’être portées.</p>
+        </article>
+        <article class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">↗</span>
+          <h3>Prix juste</h3>
+          <p>Des trouvailles accessibles, sans compromis sur le bon goût ni sur l’envie de se distinguer.</p>
+        </article>
+      </div>
     </section>
 
     <section class="shop-section" id="boutique">
